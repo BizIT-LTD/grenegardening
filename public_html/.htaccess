@@ -1,0 +1,48 @@
+RewriteEngine On
+DirectoryIndex index.html
+
+# Force HTTPS and the www canonical domain.
+# Enable this only after grenegardening.com.au is pointed to Hostinger and SSL is active.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.grenegardening\.com\.au$ [NC]
+RewriteRule ^(.*)$ https://www.grenegardening.com.au/$1 [R=301,L]
+
+# Redirect index.html to root.
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Redirect direct .html requests to extensionless URLs.
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Remove trailing slashes from clean page URLs so relative assets resolve correctly.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+ErrorDocument 404 /404
+
+# Old Wix URL redirects. These are exact matches and point to clean URLs.
+RewriteRule ^garden/?$ /garden-maintenance [R=301,L]
+RewriteRule ^sydneystratagardening/?$ /strata-gardening-sydney [R=301,L]
+RewriteRule ^local-gardener/?$ /local-gardener-st-ives [R=301,L]
+RewriteRule ^gardening-st-ives/?$ /garden-maintenance [R=301,L]
+RewriteRule ^gardener-st-ives/?$ /local-gardener-st-ives [R=301,L]
+
+# Serve extensionless URLs from matching .html files.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>

@@ -1,0 +1,58 @@
+# Private configuration and credentials
+public_html/backend/config.php
+public_html/backend/config.*.php
+!public_html/backend/config.example.php
+.env
+.env.*
+*.env
+*smtp*password*
+*email*password*
+*hostinger*password*
+*secret*
+*credentials*
+
+# Logs
+*.log
+logs/
+public_html/backend/logs/
+
+# Raw original media - keep originals local, do not commit to GitHub
+public_html/assets/images/rawphotos/
+
+# Large raw video/source media
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.m4v
+*.mts
+*.m2ts
+*.heic
+*.HEIC
+*.heif
+*.HEIF
+
+# Temporary and cache files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*.orig
+~$*
+__pycache__/
+.pytest_cache/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Dependency folders if tools are run locally
+node_modules/
+vendor/
