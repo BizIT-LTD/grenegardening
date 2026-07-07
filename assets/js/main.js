@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (status === 'success') {
       statusBox.textContent = 'Thank you. Your message has been sent and Grene Gardening will be in touch.';
       statusBox.classList.add('success');
-    } else if (status === 'error') {
+    } else if (status === 'error' || status === 'config' || status === 'dependency') {
       statusBox.textContent = 'Sorry, your message could not be sent. Please call 0448 605 591 or email grenegardening@gmail.com.';
       statusBox.classList.add('error');
     }

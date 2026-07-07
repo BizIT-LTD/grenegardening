@@ -20,6 +20,18 @@ function redirect_error(): void
     exit;
 }
 
+function redirect_config_error(): void
+{
+    header('Location: /contact?status=config');
+    exit;
+}
+
+function redirect_dependency_error(): void
+{
+    header('Location: /contact?status=dependency');
+    exit;
+}
+
 if (!empty($_POST['website'] ?? '')) {
     header('Location: /contact?status=success');
     exit;
@@ -37,16 +49,20 @@ if ($name === '' || !$email || $message === '') {
 $configPath = __DIR__ . '/config.php';
 if (!file_exists($configPath)) {
     error_log('Grene Gardening contact form: backend/config.php is missing. Copy config.example.php to config.php and add Hostinger SMTP details.');
-    redirect_error();
+    redirect_config_error();
 }
 
 $config = require $configPath;
 
 // PHPMailer must be installed or copied to backend/phpmailer/.
 $phpmailerBase = __DIR__ . '/phpmailer/src/';
-if (!file_exists($phpmailerBase . 'PHPMailer.php')) {
+if (
+    !file_exists($phpmailerBase . 'PHPMailer.php') ||
+    !file_exists($phpmailerBase . 'SMTP.php') ||
+    !file_exists($phpmailerBase . 'Exception.php')
+) {
     error_log('Grene Gardening contact form: PHPMailer files are missing from backend/phpmailer/src/.');
-    redirect_error();
+    redirect_dependency_error();
 }
 
 require $phpmailerBase . 'Exception.php';
@@ -74,7 +90,7 @@ try {
     $mail->send();
     header('Location: /contact?status=success');
     exit;
-} catch (Exception $exception) {
+} catch (\Throwable $exception) {
     error_log('Grene Gardening contact form error: ' . $exception->getMessage());
     redirect_error();
 }
