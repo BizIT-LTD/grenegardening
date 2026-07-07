@@ -1,6 +1,14 @@
 RewriteEngine On
 DirectoryIndex index.html
 
+# Block public access to repository, credential and documentation files.
+RewriteRule (^|/)\.git(/|$) - [F,L]
+RewriteRule (^|/)\.gitignore$ - [F,L]
+RewriteRule (^|/)\.env(\..*)?$ - [F,L]
+RewriteRule ^(README|ASSET_AUDIT)\.md$ - [F,L]
+RewriteRule \.md$ - [F,L]
+RewriteRule ^backend/config\.php$ - [F,L]
+
 # Force HTTPS and the www canonical domain.
 # Enable this only after grenegardening.com.au is pointed to Hostinger and SSL is active.
 RewriteCond %{HTTPS} !=on [OR]

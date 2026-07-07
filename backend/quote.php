@@ -46,7 +46,7 @@ if (!file_exists($configPath)) {
 
 $config = require $configPath;
 
-// PHPMailer must be installed or copied to public_html/backend/phpmailer/.
+// PHPMailer must be installed or copied to backend/phpmailer/.
 $phpmailerBase = __DIR__ . '/phpmailer/src/';
 if (!file_exists($phpmailerBase . 'PHPMailer.php')) {
     error_log('Grene Gardening quote form: PHPMailer files are missing from backend/phpmailer/src/.');
@@ -84,4 +84,5 @@ try {
 }
 
 // If spam becomes a problem, add reCAPTCHA or Turnstile in addition to the honeypot field.
+
 

@@ -1,30 +1,30 @@
-# Grene Gardening Hostinger Website
+﻿# Grene Gardening Hostinger Website
 
 ## 1. Project overview
 
-This is a clean Hostinger rebuild for Grene Gardening, replacing the old Wix website with lightweight HTML, CSS, JavaScript and PHP files. The project is designed for Hostinger shared hosting and should be uploaded so the contents of `public_html` sit directly inside the hosting account's `public_html` directory.
+This is a clean Hostinger rebuild for Grene Gardening, replacing the old Wix website with lightweight HTML, CSS, JavaScript and PHP files. The project is designed for Hostinger shared hosting. Upload the repository root contents directly into the hosting account's `public_html` directory.
 
 No Wix, WordPress, React, Bootstrap or Tailwind code is used.
 
-Public URLs are extensionless. Files such as `services.html` remain in `public_html`, but Apache rewrite rules serve them at clean URLs such as `/services`, `/gallery`, `/contact` and `/quote`.
+Public URLs are extensionless. Files such as `services.html` remain at the repository root, but Apache rewrite rules serve them at clean URLs such as `/services`, `/gallery`, `/contact` and `/quote`.
 
 ## 2. Folder structure
 
-- `public_html/` contains the live website files.
-- `public_html/assets/css/` contains the main stylesheet.
-- `public_html/assets/js/` contains lightweight JavaScript.
-- `public_html/assets/images/` contains folders for logo, hero, service, gallery, testimonial and before/after images.
-- `public_html/backend/` contains PHP form handlers and SMTP configuration examples.
+- The repository root contains the live website files that should be deployed into Hostinger `public_html`.
+- `assets/css/` contains the main stylesheet.
+- `assets/js/` contains lightweight JavaScript.
+- `assets/images/` contains folders for logo, hero, service, gallery, testimonial and before/after images.
+- `backend/` contains PHP form handlers and SMTP configuration examples.
 
 ## 3. How to add real images
 
 Copy real website images into:
 
-- `public_html/assets/images/logo/`
-- `public_html/assets/images/hero/`
-- `public_html/assets/images/services/`
-- `public_html/assets/images/gallery/`
-- `public_html/assets/images/before-after/`
+- `assets/images/logo/`
+- `assets/images/hero/`
+- `assets/images/services/`
+- `assets/images/gallery/`
+- `assets/images/before-after/`
 
 The current build already uses selected real images from `rawphotos` through optimised copies in the public image folders. Add future images the same way: keep originals in `rawphotos`, then create web-sized copies with `loading="lazy"` and descriptive `alt` text.
 
@@ -43,7 +43,7 @@ Use SEO-friendly file names such as:
 
 ## 5. How to configure SMTP on Hostinger
 
-1. Copy `public_html/backend/config.example.php` to `public_html/backend/config.php`.
+1. Copy `backend/config.example.php` to `backend/config.php`.
 2. Add the real Hostinger SMTP username and password.
 3. Use `smtp.hostinger.com`.
 4. Use port `465` with SSL.
@@ -56,20 +56,20 @@ Configure SMTP only on Hostinger or the final private hosting environment. Never
 
 Copy PHPMailer into:
 
-`public_html/backend/phpmailer/`
+`backend/phpmailer/`
 
 The PHP handlers expect these files:
 
-- `public_html/backend/phpmailer/src/PHPMailer.php`
-- `public_html/backend/phpmailer/src/SMTP.php`
-- `public_html/backend/phpmailer/src/Exception.php`
+- `backend/phpmailer/src/PHPMailer.php`
+- `backend/phpmailer/src/SMTP.php`
+- `backend/phpmailer/src/Exception.php`
 
 ## 7. How to upload to Hostinger
 
-1. Zip the contents of `public_html`.
+1. Zip the contents of the repository root, not the project folder itself.
 2. Upload the zip file into Hostinger File Manager.
 3. Extract it inside the hosting account's `public_html`.
-4. Confirm `index.html` is directly inside `public_html`.
+4. Confirm `index.html`, `.htaccess`, `assets/` and `backend/` are directly inside Hostinger `public_html`, not inside another nested folder.
 5. Test the homepage.
 6. Test the contact page.
 7. Test the quote page.
@@ -110,17 +110,17 @@ The PHP handlers expect these files:
 - Add a Google review link.
 - Add Google Analytics or Google Tag Manager if required.
 - Add Google Search Console verification.
-- Create `public_html/backend/config.php` from the example file.
+- Create `backend/config.php` from the example file.
 - Add real SMTP credentials on Hostinger.
-- Install or copy PHPMailer into `public_html/backend/phpmailer/`.
+- Install or copy PHPMailer into `backend/phpmailer/`.
 - Test forms on Hostinger.
 - Submit the sitemap to Google.
 
 ## 11. GitHub safety notes
 
-- `public_html/backend/config.php` is ignored and must not be committed.
-- `public_html/assets/images/rawphotos/` is ignored and must not be committed because it contains original photos and large raw videos.
-- Keep `public_html/backend/config.example.php` committed as the safe template.
+- `backend/config.php` is ignored and must not be committed.
+- `assets/images/rawphotos/` is ignored and must not be committed because it contains original photos and large raw videos.
+- Keep `backend/config.example.php` committed as the safe template.
 - Keep optimised web images committed only when they are actually used by the website.
 - Add real SMTP credentials only on Hostinger by copying `config.example.php` to `config.php` there.
 - Check `git status --ignored` before pushing if this is turned into a Git repository.
@@ -128,3 +128,4 @@ The PHP handlers expect these files:
 ## 12. Local quality review notes
 
 Reviewed locally on 7 July 2026. The site uses the simplified navigation, real logo, optimised image copies, lazy-loaded non-critical images, a metadata-only video embed, clean extensionless public URLs, and exact-match old URL redirects. PHP form syntax still needs to be linted/tested on a PHP-enabled Hostinger environment because PHP is not installed in the local review environment.
+

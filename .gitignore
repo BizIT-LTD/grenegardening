@@ -1,7 +1,7 @@
 # Private configuration and credentials
-public_html/backend/config.php
-public_html/backend/config.*.php
-!public_html/backend/config.example.php
+backend/config.php
+backend/config.*.php
+!backend/config.example.php
 .env
 .env.*
 *.env
@@ -14,10 +14,10 @@ public_html/backend/config.*.php
 # Logs
 *.log
 logs/
-public_html/backend/logs/
+backend/logs/
 
 # Raw original media - keep originals local, do not commit to GitHub
-public_html/assets/images/rawphotos/
+assets/images/rawphotos/
 
 # Large raw video/source media
 *.mov
