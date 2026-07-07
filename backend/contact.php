@@ -38,11 +38,26 @@ if (!empty($_POST['website'] ?? '')) {
 }
 
 $name = clean_text($_POST['name'] ?? '');
-$email = filter_var(trim((string)($_POST['email'] ?? '')), FILTER_VALIDATE_EMAIL);
+$emailRaw = trim((string)($_POST['email'] ?? ''));
+$email = $emailRaw === '' ? null : filter_var($emailRaw, FILTER_VALIDATE_EMAIL);
 $phone = clean_text($_POST['phone'] ?? '');
 $message = trim(strip_tags((string)($_POST['message'] ?? '')));
+$source = clean_text($_POST['source'] ?? 'contact_form');
+$isFloatingMessage = $source === 'floating_message';
 
-if ($name === '' || !$email || $message === '') {
+if ($name === '' || $message === '') {
+    redirect_error();
+}
+
+if ($emailRaw !== '' && !$email) {
+    redirect_error();
+}
+
+if ($isFloatingMessage && $phone === '' && !$email) {
+    redirect_error();
+}
+
+if (!$isFloatingMessage && !$email) {
     redirect_error();
 }
 
@@ -82,10 +97,14 @@ try {
 
     $mail->setFrom($config['from_email'], $config['from_name']);
     $mail->addAddress($config['to_email'], $config['to_name']);
-    $mail->addReplyTo((string)$email, $name);
+    if ($email) {
+        $mail->addReplyTo((string)$email, $name);
+    }
 
-    $mail->Subject = 'New contact enquiry from Grene Gardening website';
-    $mail->Body = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\n\nMessage:\n{$message}";
+    $mail->Subject = $isFloatingMessage
+        ? 'New quick message from Grene Gardening website'
+        : 'New contact message from Grene Gardening website';
+    $mail->Body = "Source: {$source}\nName: {$name}\nEmail: " . ($email ?: 'Not provided') . "\nPhone: " . ($phone ?: 'Not provided') . "\n\nMessage:\n{$message}";
 
     $mail->send();
     header('Location: /contact?status=success');
