@@ -13,7 +13,7 @@ Public URLs are extensionless. Files such as `services.html` remain at the repos
 - The repository root contains the live website files that should be deployed into Hostinger `public_html`.
 - `assets/css/` contains the main stylesheet.
 - `assets/js/` contains lightweight JavaScript.
-- `assets/images/` contains folders for logo, hero, service, gallery, testimonial and before/after images.
+- `assets/images/` contains folders for logo, favicon, hero, service, gallery, testimonial and before/after images.
 - `backend/` contains PHP form handlers and SMTP configuration examples.
 
 ## 3. How to add real images
@@ -41,7 +41,23 @@ Use SEO-friendly file names such as:
 - `garden-clean-up-north-shore.jpg`
 - `garden-makeover-st-ives.jpg`
 
-## 5. How to configure SMTP on Hostinger
+## 5. Favicon setup
+
+The favicon files are stored in `assets/images/favicon/` and are linked from every HTML page with root-relative paths so they work on clean URLs.
+
+Current favicon files:
+
+- `favicon.ico`
+- `favicon-16x16.png`
+- `favicon-32x32.png`
+- `apple-touch-icon.png`
+- `android-chrome-192x192.png`
+- `android-chrome-512x512.png`
+- `site.webmanifest`
+
+The current favicon set was generated from `assets/images/logo/Original on Transparent.png`, using the house and leaf mark from the logo. If the logo changes later, regenerate the favicon set from the clearest transparent logo source and keep the same file names.
+
+## 6. How to configure SMTP on Hostinger
 
 1. Copy `backend/config.example.php` to `backend/config.php`.
 2. Add the real Hostinger SMTP username and password.
@@ -52,7 +68,7 @@ Use SEO-friendly file names such as:
 Do not commit or publicly share `config.php`.
 Configure SMTP only on Hostinger or the final private hosting environment. Never add SMTP passwords, Hostinger passwords, API keys, private keys or email passwords to GitHub.
 
-## 6. PHPMailer setup
+## 7. PHPMailer setup
 
 Copy PHPMailer into:
 
@@ -64,7 +80,7 @@ The PHP handlers expect these files:
 - `backend/phpmailer/src/SMTP.php`
 - `backend/phpmailer/src/Exception.php`
 
-## 7. How to upload to Hostinger
+## 8. How to upload to Hostinger
 
 1. Zip the contents of the repository root, not the project folder itself.
 2. Upload the zip file into Hostinger File Manager.
@@ -74,7 +90,7 @@ The PHP handlers expect these files:
 6. Test the contact page.
 7. Test the quote page.
 
-## 8. DNS and go-live checklist
+## 9. DNS and go-live checklist
 
 - Do not cancel Wix until the new site is tested.
 - Upload the new site to Hostinger.
@@ -89,7 +105,7 @@ The PHP handlers expect these files:
 - Test old Wix redirects.
 - Test contact and quote forms.
 
-## 9. SEO checklist
+## 10. SEO checklist
 
 - Review every title tag and meta description.
 - Confirm each page has one H1.
@@ -103,7 +119,7 @@ The PHP handlers expect these files:
 - Run a page speed check.
 - Run a mobile-friendly check.
 
-## 10. Manual work still required
+## 11. Manual work still required
 
 - Replace the contact page map area with the preferred Google Maps embed or static map link.
 - Add real testimonials or Google review excerpts.
@@ -116,7 +132,7 @@ The PHP handlers expect these files:
 - Test forms on Hostinger.
 - Submit the sitemap to Google.
 
-## 11. GitHub safety notes
+## 12. GitHub safety notes
 
 - `backend/config.php` is ignored and must not be committed.
 - `assets/images/rawphotos/` is ignored and must not be committed because it contains original photos and large raw videos.
@@ -125,7 +141,7 @@ The PHP handlers expect these files:
 - Add real SMTP credentials only on Hostinger by copying `config.example.php` to `config.php` there.
 - Check `git status --ignored` before pushing if this is turned into a Git repository.
 
-## 12. Local quality review notes
+## 13. Local quality review notes
 
 Reviewed locally on 7 July 2026. The site uses the simplified navigation, real logo, optimised image copies, lazy-loaded non-critical images, a metadata-only video embed, clean extensionless public URLs, and exact-match old URL redirects. PHP form syntax still needs to be linted/tested on a PHP-enabled Hostinger environment because PHP is not installed in the local review environment.
 
