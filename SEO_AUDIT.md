@@ -19,6 +19,25 @@ Date reviewed: 8 July 2026
 - `/quote`
 - `/404`
 
+## Files changed during SEO pass
+
+- `SEO_AUDIT.md`
+- `sitemap.xml`
+- `index.html`
+- `about.html`
+- `services.html`
+- `garden-maintenance.html`
+- `lawn-mowing-st-ives.html`
+- `hedge-trimming-st-ives.html`
+- `strata-gardening-sydney.html`
+- `local-gardener-st-ives.html`
+- `garden-makeovers-st-ives.html`
+- `gallery.html`
+- `blog.html`
+- `contact.html`
+- `quote.html`
+- `404.html`
+
 ## Current SEO issues found
 
 - Several title tags were longer than ideal or repeated similar keyword patterns.
