@@ -37,6 +37,8 @@ Date reviewed: 8 July 2026
 - `contact.html`
 - `quote.html`
 - `404.html`
+- `assets/css/style.css`
+- `GOOGLE_REVIEWS_SYNC_PLAN.md`
 
 ## Current SEO issues found
 
@@ -86,7 +88,9 @@ Each page now has one unique title tag and one unique meta description. Titles w
   - Why strata properties need reliable garden maintenance
   - When to book a garden clean up in St Ives
 - Preserved call and quote CTAs across important pages.
-- Kept testimonial placeholders clearly marked rather than adding fake reviews.
+- Updated the homepage testimonials area into a Google Reviews section with the Google review link.
+- Kept review placeholders clearly marked because exact Google review text, reviewer names and ratings are not available in the project.
+- Added both Google review actions: read Google reviews and leave a Google review.
 
 ## Structured data completed
 
@@ -109,6 +113,7 @@ Each page now has one unique title tag and one unique meta description. Titles w
   - `/hedge-trimming-st-ives`
   - `/strata-gardening-sydney`
   - `/garden-makeovers-st-ives`
+- Review schema was not added because exact real review text and ratings are not available.
 
 ## Technical SEO checks completed
 
@@ -155,6 +160,8 @@ Each page now has one unique title tag and one unique meta description. Titles w
 - Confirm Google Business Profile details match the website name, phone, address and service areas.
 - Add confirmed social profile URLs to LocalBusiness `sameAs` only after the real links are available.
 - Add real testimonials or Google review excerpts only with permission and accurate attribution.
+- Replace the homepage Google review placeholders with exact real Google reviews, reviewer first names or initials, and star ratings only if visible.
+- Automatic review syncing can be considered later using the Google Business Profile API or a third-party widget. API keys and credentials must never be exposed in frontend JavaScript.
 - Replace the contact page map placeholder with the preferred Google Maps embed or static map link.
 - Submit `https://www.grenegardening.com.au/sitemap.xml` in Google Search Console after deployment.
 - Run Google Rich Results Test on FAQ and breadcrumb pages after upload.
