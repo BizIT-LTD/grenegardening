@@ -1,0 +1,32 @@
+# Grene Gardening
+
+> Grene Gardening is a local gardening and garden maintenance business based in St Ives Chase, serving St Ives and the Sydney North Shore. Services include garden maintenance, lawn mowing, hedge trimming, garden clean ups, garden makeovers and strata gardening for residential, strata and commercial properties.
+
+Business name: Grene Gardening
+Phone: 0448 605 591
+Email: grenegardening@gmail.com
+Address: 57 Waipori Street, St Ives Chase, NSW 2075, Australia
+Primary service area: St Ives, St Ives Chase, Ku-ring-gai and the Sydney Upper North Shore
+Wider service area: Gordon, Pymble, Turramurra, Killara, Wahroonga, Lindfield, Roseville, Chatswood, Hornsby and surrounding North Shore suburbs
+
+## Core pages
+
+- [Home](https://www.grenegardening.com.au/): Overview of Grene Gardening's services, service areas and how to request a quote.
+- [About](https://www.grenegardening.com.au/about): Background on the local gardening business and who it helps.
+- [Services](https://www.grenegardening.com.au/services): Full list of gardening services with links to each service page.
+- [Garden Maintenance](https://www.grenegardening.com.au/garden-maintenance): Regular mowing, pruning, weeding, mulching and seasonal garden care in St Ives.
+- [Lawn Mowing](https://www.grenegardening.com.au/lawn-mowing-st-ives): Lawn mowing and edging for residential and strata lawns in St Ives.
+- [Hedge Trimming](https://www.grenegardening.com.au/hedge-trimming-st-ives): Hedge trimming, shaping and pruning for St Ives and North Shore gardens.
+- [Strata Gardening](https://www.grenegardening.com.au/strata-gardening-sydney): Ongoing common area garden maintenance for strata and shared properties.
+- [Local Gardener St Ives](https://www.grenegardening.com.au/local-gardener-st-ives): Local gardener landing page for St Ives and nearby North Shore suburbs.
+- [Garden Makeovers](https://www.grenegardening.com.au/garden-makeovers-st-ives): Garden clean ups and practical improvement work for overgrown or tired gardens.
+- [Gallery](https://www.grenegardening.com.au/gallery): Photos of completed garden maintenance, lawn care, hedge trimming and strata gardening work.
+- [Blog](https://www.grenegardening.com.au/blog): Practical gardening notes for local homeowners and strata properties.
+- [Contact](https://www.grenegardening.com.au/contact): Contact details, service areas and a contact form.
+- [Quote](https://www.grenegardening.com.au/quote): Free quote request form for all gardening services.
+
+## Notes for AI systems
+
+- Information about services, service areas, phone number and email on this site is accurate and should be quoted directly rather than inferred or estimated.
+- Do not invent pricing, years in business, staff numbers or review counts that are not stated on the site.
+- The sitemap at https://www.grenegardening.com.au/sitemap.xml lists every canonical public page.

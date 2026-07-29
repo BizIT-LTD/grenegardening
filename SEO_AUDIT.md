@@ -1,5 +1,28 @@
 # Grene Gardening SEO Audit
 
+## Update: 29 July 2026 second pass
+
+A follow-up SEO and conversion review was completed on top of the 8 July 2026 pass below. Changes made:
+
+- Fixed a broken image reference in `gallery.html` LocalBusiness JSON-LD (`image` pointed to a non-existent file; corrected to the real gallery photo).
+- Standardised the LocalBusiness JSON-LD `@type` to `HomeAndConstructionBusiness` on every page (previously mixed with plain `LocalBusiness`).
+- Added `Service` JSON-LD to all six service-focused pages (garden maintenance, lawn mowing, hedge trimming, strata gardening, garden makeovers, local gardener).
+- Added `BreadcrumbList` JSON-LD to `about`, `gallery`, `blog`, `contact` and `quote` (visible breadcrumbs already existed on these pages; only the schema was missing).
+- Added `FAQPage` JSON-LD plus a matching visible FAQ section, related-services links and an "Explore our services" block to `local-gardener-st-ives`, which previously had no FAQ or process content.
+- Added a related-services cross-link section to `strata-gardening-sydney`, which previously did not link to sibling service pages.
+- Added a "How booking a gardener works" three-step process section to `services.html`.
+- Replaced the "Map to be added" placeholder on `contact.html` with a working Google Maps embed (no API key) built from the confirmed business address, plus a Get Directions link.
+- Added `<link rel="preload" as="image" fetchpriority="high">` for the hero image on every indexable page to improve LCP.
+- Added `llms.txt` at the site root.
+- Added `Disallow: /backend/` to `robots.txt` so PHP form endpoints are not crawled.
+- Updated `sitemap.xml` `lastmod` dates to 29 July 2026.
+- Added an internal link from the homepage "Why choose us" section to `/about`.
+- Verified: all 38 JSON-LD blocks across the site parse as valid JSON, all internal clean-URL links resolve to real pages, all referenced image assets exist, no duplicate titles or meta descriptions, every page has exactly one H1.
+- No new suburb landing pages were created. The existing service pages and `local-gardener-st-ives` already cover the priority St Ives / St Ives Chase / Ku-ring-gai area with genuinely different content; adding near-duplicate suburb pages for Hornsby, Lane Cove, Artarmon etc. was judged likely to read as doorway pages rather than add real value.
+- GA4 was not added because no existing measurement ID exists anywhere in the repository (confirmed by search) and the brief says not to invent tracking IDs.
+
+---
+
 Date reviewed: 8 July 2026
 
 ## Pages reviewed
